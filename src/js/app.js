@@ -67,18 +67,13 @@ class Like {
             heart.append(heartImg);
             heart.classList.add(randomWay)
 
-            setTimeout(() => {
+            heart.addEventListener('animationend', () => {
                 const rect = heart.getBoundingClientRect();
                 const containerRect = this.element.getBoundingClientRect();
-                console.log(rect);
-                console.log(containerRect)
-                if (rect.left < containerRect.left ||
-                    rect.right > containerRect.right ||
-                    rect.top < containerRect.top ||
-                    rect.bottom > containerRect.bottom) {
+                if (rect.top < containerRect.top) {
                     heart.remove();
                 }
-            }, 2000);
+            })
         });
 
     }
