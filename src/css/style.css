@@ -1,0 +1,317 @@
+.collapse-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 35px;
+    padding: 10px;
+    transition: all 2s;
+    overflow: hidden;
+}
+
+.collapse-container.active {
+    max-height: 127px;
+}
+
+.collapse-btn {
+    width: 80px;
+    padding: 7px;
+    border: 1px solid rgb(56, 159, 255);
+    border-radius: 5px;
+    background-color: rgb(56, 159, 255);
+    color: white;
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+    cursor: pointer;
+}
+
+.collapse-btn:hover {
+    outline: 2px solid rgb(56, 159, 255);
+    outline-offset: 1px;
+}
+
+.collapse-text {
+    display: block;
+    padding: 7px;
+    width: 300px;
+    font-size: 14px;
+    color: black;
+    border: 1px solid rgb(56, 159, 255);
+
+}
+
+
+/* popup */
+.popup-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+.open {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid red;
+    border-radius: 50%;
+    background-color: red;
+    transition: 1s;
+    cursor: pointer;
+    z-index: 999;
+    transition: opacity 0.5s ease;
+    opacity: 1
+}
+
+.open:hover {
+    transform: scale(1.2);
+}
+
+.open.hidden {
+    opacity: 0;
+}
+
+.open.active {
+    opacity: 1;
+}
+
+.modal-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px 7px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+.modal-content.hidden {
+    opacity: 0;
+}
+
+.modal-content.active {
+    opacity: 1;
+}
+
+.modal-header {
+    margin: 5px 0;
+}
+
+.modal-input {
+    width: 216px;
+    padding: 5px;
+    min-height: 50px;
+    margin-bottom: 10px;
+}
+
+.modal-send {
+    min-height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-top {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* hearts */
+
+.hearts-container {
+    padding: 5px;
+    background-color: lightblue;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.like-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 35%;
+    height: 30px;
+    padding: 5px 20px;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.heart {
+    position: absolute;
+    bottom: 5px;
+    left: 40%;
+}
+
+.heart.left {
+    animation-name: left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes left {
+    0% {
+        opacity: 1;
+        bottom: 5px;
+        left: 40%;
+    }
+    20% {
+        opacity: 0.8;
+        bottom: 65px;
+        left: 20%
+    }
+    40% {
+        opacity: 0.6;
+        bottom: 125px;
+        left: 40%;
+    }
+    60% {
+        opacity: 0.4;
+        bottom: 185px;
+        left: 20%;
+    }
+    80% {
+        opacity: 0.2;
+        bottom: 245px;
+        left: 40%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 400px;
+        left: 20%;
+    }
+}
+
+.heart.right {
+    animation-name: right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes right {
+    0% {
+        opacity: 1;
+        bottom: 5px;
+        left: 40%;
+    }
+    20% {
+        opacity: 0.8;
+        bottom: 65px;
+        left: 60%
+    }
+    40% {
+        opacity: 0.6;
+        bottom: 125px;
+        left: 40%;
+    }
+    60% {
+        opacity: 0.4;
+        bottom: 185px;
+        left: 60%;
+    }
+    80% {
+        opacity: 0.2;
+        bottom: 245px;
+        left: 40%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 400px;
+        left: 60%;
+    }
+}
+
+.heart.center-right {
+    animation-name: center-right;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes center-right {
+    0% {
+        opacity: 1;
+        bottom: 5px;
+        left: 40%;
+    }
+    20% {
+        opacity: 0.8;
+        bottom: 65px;
+        left: 40%
+    }
+    40% {
+        opacity: 0.6;
+        bottom: 125px;
+        left: 60%;
+    }
+    60% {
+        opacity: 0.4;
+        bottom: 185px;
+        left: 40%;
+    }
+    80% {
+        opacity: 0.2;
+        bottom: 245px;
+        left: 60%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 400px;
+        left: 40%;
+    }
+}
+
+.heart.center-left {
+    animation-name: center-left;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes center-left {
+    0% {
+        opacity: 1;
+        bottom: 5px;
+        left: 40%;
+    }
+    20% {
+        opacity: 0.8;
+        bottom: 65px;
+        left: 40%
+    }
+    40% {
+        opacity: 0.6;
+        bottom: 125px;
+        left: 20%;
+    }
+    60% {
+        opacity: 0.4;
+        bottom: 185px;
+        left: 40%;
+    }
+    80% {
+        opacity: 0.2;
+        bottom: 245px;
+        left: 20%;
+    }
+    100% {
+        opacity: 0;
+        bottom: 400px;
+        left: 40%;
+    }
+}
